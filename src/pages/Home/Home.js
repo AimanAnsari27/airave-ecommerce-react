@@ -11,7 +11,7 @@ export default function Home(){
                     <button className="btn btn-primary">Shop Now</button>
                 </div>
                 <div className="hero-image">
-                    <img src="/Images/hero-image/hero-img.avif"/>
+                    <img src="/Images/hero-image/hero-img.avif" alt='hero-image'/>
                 </div>
             </div>
            <Category/>
