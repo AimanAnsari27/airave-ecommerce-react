@@ -1,6 +1,6 @@
 import '../../App.css'
 import Category from "../../Components/Category/Category";
-import Product from "../Product/Product";
+import Product from '../../Components/Product/Product';
 export default function Home(){
     return(
         <div>
