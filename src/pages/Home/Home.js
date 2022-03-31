@@ -1,6 +1,8 @@
 import '../../App.css'
 import Category from "../../Components/Category/Category";
 import Product from '../../Components/Product/Product';
+import { categories } from '../../backend/db/categories';
+import { products } from '../../backend/db/products';
 export default function Home(){
     return(
         <div>
@@ -14,10 +16,22 @@ export default function Home(){
                     <img src="/Images/hero-image/hero-img.avif" alt='hero-image'/>
                 </div>
             </div>
-           <Category/>
-           <Product/>
-           
-            
+            <div className="flex-align-center m-2">
+                <h4>Shop By Categories</h4>
+            </div>
+            <div className="flex-align-center gap-2">
+                {categories.map((item)=>
+                    <Category item={item}/>
+                )}
+            </div>
+            <div className="flex-align-center m-2">
+                <h4>Top Deals</h4>
+            </div>
+            <div className="flex-align-center gap-2">
+                {products.map((prod)=>
+                    <Product prod={prod}/>
+                )}
+            </div>
         </div>
            
     )

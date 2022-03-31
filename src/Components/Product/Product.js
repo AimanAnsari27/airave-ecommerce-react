@@ -1,20 +1,10 @@
-import { products } from "../../backend/db/products"
-export default function Product(){
+export default function Product({prod}){
     return(
-        <div>
-            <div className="flex-align-center m-2">
-            <h4>Top Deals</h4>
-        </div>
-        <div className="flex-align-center gap-2">
-            {products.map((item)=>
                 <div className="card box-shadow-bottom">
-                    <img className="img-sm" src={item.image} alt={item.title}/>
+                    <img className="img-sm" src={prod.image} alt={prod.title}/>
                     <div className="card-title flex-align-center pd--5">
-                       Upto {item.discount} OFF
+                       Upto {prod.discount} OFF
                     </div>
                 </div>
-            )}
-        </div>
-       </div>
     )
 }
