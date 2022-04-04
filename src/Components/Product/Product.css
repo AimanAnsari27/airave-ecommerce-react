@@ -1,0 +1,43 @@
+:root{
+    --box-shadow : rgba(217,217,217,1)
+}
+
+.product-container{
+    display: flex;
+    gap: 1rem;
+}
+.product-listing{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 60rem;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: space-between;
+}
+.card{
+    width: 200px;
+    height: 350px;
+}
+.wishlist{
+    position: absolute;
+    padding: 1rem 0rem 0rem 10rem;
+}
+.wishlist:hover{
+   color: var(--danger-color);
+    border-radius: 50px;
+    height: 1rem;
+}
+.filter-text{
+    cursor: pointer;
+    color: var(--accent-color);
+    right: 0;
+}
+.filters{
+    box-shadow: 6px 12px 16px 0px var(--box-shadow);
+    padding: 1rem;    
+    width: 260px;
+}
+.card:hover{
+    box-shadow:0px 4px 22px 0px var(--box-shadow); 
+}
