@@ -26,7 +26,6 @@ export const Filter = () =>{
                         max="15000"
                         step="20"
                         value={price}
-                        label={price}
                         onChange = {(e)=>{
                             dispatch({
                                 type:'FILTER_BY_PRICE_RANGE',

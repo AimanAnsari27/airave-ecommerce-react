@@ -6,7 +6,6 @@ import '../../Components/Product/Product.css'
 export default function Product(){
     const {product, state } = useData()
     let allSortedProducts = FilterProduct(product, state)
-    console.log(allSortedProducts)
     return(
         <div className="product-container">
             <div className="filters">
