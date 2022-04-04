@@ -3,7 +3,7 @@ export default function Header(){
     return(
         <nav>
         <div className="nav-brand ml-5">
-            <NavLink to="/home">
+            <NavLink to="/">
                 <span className="text-accent">Airave</span>
                 <span className="text-light">Mart</span>
             </NavLink>
