@@ -1,5 +1,10 @@
 import { NavLink } from 'react-router-dom'
+import { useAuth } from '../../Context/AuthContext/AuthContext'
 export default function Header(){
+    const {isLogin, setIsLogin, user} = useAuth()
+    if(isLogin === false){
+        localStorage.removeItem('user')
+    }
     return(
         <nav>
         <div className="nav-brand ml-5">
@@ -13,6 +18,9 @@ export default function Header(){
                 className="search-input"
                 placeholder="Search here..."/>
             <i className="bi bi-search search-icon"></i>
+        </div>
+        <div>
+            <h5 className="mr-3"> {isLogin === true  && user  !== null ? `Hie , ${user}` : ''}</h5>
         </div>
         <ul className="mr-5 gap-1">
             <NavLink to="/cart">
@@ -28,11 +36,21 @@ export default function Header(){
                     <i className="bi bi-heart"></i>
                 </li>
             </NavLink>
-            <NavLink to="/login">
+            {isLogin === true ? (
+               <NavLink to="/">
+               <li>
+                    <i className='bi bi-box-arrow-right' 
+                    onClick={()=>setIsLogin(false)}>
+                    </i>
+               </li> 
+           </NavLink> 
+            ) : (
+                <NavLink to="/login">
                 <li>
                     <i className="bi bi-person-fill"></i>
                 </li> 
-            </NavLink>
+                </NavLink>
+            )}
         </ul>
     </nav> 
     )
