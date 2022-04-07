@@ -1,0 +1,16 @@
+/* .cart-container{
+    /* background-color: red; 
+} */
+.cart{
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+    margin: 4rem;
+}
+.price-table{
+    /* margin-top: 2rem; */
+    padding: 1rem;
+}
+.price-table > span{
+    padding: 1rem;
+}
