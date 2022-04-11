@@ -1,39 +1,70 @@
-export const CartProduct = () =>{
+import { Link } from "react-router-dom";
+import { useCart } from "../../Context/DataContext/CartContext";
+export const CartProduct = ({product}) =>{
+const {_id, name, image, description, price , discount} = product
+    const {removeCartItem, updateCart} = useCart()
+    
     return(
         <div>
-                <div class="flex box-shadow-light pd-1">
-                    <img class=" img-md" src="/Images/Shoes/adidas.webp"/>
+            <div class="flex box-shadow-light pd-1" key={_id}>
+                <img class=" img-md" src={image}/>
                     <div class="flex-col card-body ml-1">
                         <div class="flex gap-3">
                             <div>
-                                <div class="card-title text-sm">American Tourister </div>
-                                <div class="card-description">Americn tourister bag </div>
+                                <div class="card-title text-sm">{name} </div>
+                                <div class="card-description">{description} </div>
                             </div>
                             <div>
-                                <i class="fa fa-trash fa-1x text-accent"></i>
+                                <i class="fa fa-trash fa-1x text-accent"
+                                    onClick={()=>removeCartItem(product)}>
+                                </i>
                             </div>
                         </div>
-                        <div class="price">Rs 2500
-                            <del class="gray-text h6 ml-1">Rs. 5000</del>
-                            <span class="text-accent h6"> (50% oFF)</span>
-                        </div>                            
+                        {discount ? (
+                            <div class="price">Rs {price * (1-(discount/100))}
+                                <del class="gray-text h6 ml-1">Rs. {price}</del>
+                                <span class="text-accent h6"> ({discount}% oFF)</span>
+                            </div>
+                             ) : (
+                                <div>{price}</div>
+                        )}
+                                                 
                         <div class="quantity-btn mt-1 gap-2">
                             <button class="btn-icon-round btn-icon-sm box-shadow-bottom">
-                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-plus" 
+                                    onClick={() =>
+                                        updateCart({
+                                            product, 
+                                            type:'increment'
+                                        }
+                                    )}
+                                ></i>
                             </button> 
-                            <span class="bold-text pd--5">1</span>
+                            <span class="bold-text pd--5">
+                                {product.qty === 0  ? null : product.qty}
+                            </span>
                             <button class="btn-icon-round btn-icon-sm box-shadow-bottom">
-                                <i class="fa fa-minus"></i>
+                                <i class="fa fa-minus"
+                                    onClick={() =>
+                                        updateCart({
+                                            product,
+                                            type:'decrement'
+                                        })
+                                    }
+                                >
+                               </i>
                             </button> 
                         </div>
-                        <a href="/Wishlist/wishlist.html">
+                        <Link to="/wishlist">
                             <button class="btn btn-outline-primary width-100 mt-1">
                                 <span>Add to Wishlist</span>
-                                <span class="btn-icon"><i class="bi bi-heart"></i></span>
+                                <span class="btn-icon">
+                                    <i class="bi bi-heart"></i>
+                                </span>
                             </button>
-                        </a>
+                        </Link>
                     </div> 
-                </div>
-                </div>
+                </div> 
+            </div>
     )
 }

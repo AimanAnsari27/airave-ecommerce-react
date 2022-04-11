@@ -13,7 +13,7 @@ export const products = [
     price: "5000",
     categoryName: "Shoes",
     brandName: "puma",
-    discount: "50%",
+    discount: "50",
     rating: "5",
     image:"/Images/Shoes/adidas.webp"
   },
@@ -24,7 +24,7 @@ export const products = [
     price: "4500",
     categoryName: "Jacket",
     brandName: "patagonia",
-    discount: "10%",
+    discount: "10",
     rating: "4",
     image:"/Images/Jackets/patagonia-jackets.webp"
   },
@@ -35,7 +35,7 @@ export const products = [
     price: "6000",
     categoryName: "Trolley",
     brandName: "VIP",
-    discount: "25%",
+    discount: "25",
     rating: "3",
     image:"/Images/Bags/VIP-bags.jpg"
   },
@@ -46,7 +46,7 @@ export const products = [
     price: "1000",
     categoryName: "Bagpack",
     brandName: "American Tourister",
-    discount: "40%",
+    discount: "40",
     rating: "2",
     image:"/Images/Bagpack/travoc.jpg"
   },
@@ -68,7 +68,7 @@ export const products = [
     price: "1500",
     categoryName: "Bagpack",
     brandName: "Travoc",
-    discount: "0%",
+    discount: "",
     rating: "5",
     image:"/Images/Bagpack/bacbag.jpg"
   },
@@ -91,7 +91,7 @@ export const products = [
     price: "8000",
     categoryName: "Trolley",
     brandName: "Sky bags",
-    discount: "10%",
+    discount: "10",
     rating: "5",
     image:"/Images/Bags/skybags.jpg"
   },

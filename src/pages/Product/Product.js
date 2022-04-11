@@ -9,8 +9,7 @@ export default function Product(){
     return(
         <div className="product-container">
             <div className="filters">
-            <Filter />
-
+                <Filter />
             </div>
             <div className="flex-col">
             <h5 className="m-2">Total number of products : <span className="gray-text">{allSortedProducts.length} Items</span></h5>

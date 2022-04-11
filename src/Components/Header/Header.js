@@ -1,9 +1,13 @@
-import { NavLink } from 'react-router-dom'
+import { Navigate, NavLink } from 'react-router-dom'
 import { useAuth } from '../../Context/AuthContext/AuthContext'
+import { useCart } from '../../Context/DataContext/CartContext';
+import { useNavigate } from 'react-router-dom';
 export default function Header(){
-    const {isLogin, setIsLogin, user} = useAuth()
+    const {isLogin, setIsLogin, user, token} = useAuth();
+    const {cart} = useCart()
+    const navigate = useNavigate()
     if(isLogin === false){
-        localStorage.removeItem('user')
+        // localStorage.removeItem('user')
     }
     return(
         <nav>
@@ -24,19 +28,28 @@ export default function Header(){
         </div>
         <ul className="mr-5 gap-1">
             <NavLink to="/cart">
-                <li>
-                    <div className="badge-wrapper">
-                        <i className="bi bi-cart fa-lg"></i>
-                        <span className="icon-badge flex-align-center">2</span>
-                    </div>
-                </li>
-            </NavLink>
+            <li>
+                <div className="badge-wrapper">
+                    
+                    <i className="bi bi-cart fa-lg"></i>
+                    {isLogin ?
+                    <span className="icon-badge flex-align-center">
+                    {cart.item.length}</span>
+                    :
+                    <span></span> }
+                    
+                    
+                </div>
+            </li>
+        </NavLink>
+        
+            
             <NavLink to="/wishlist" >
                 <li>
                     <i className="bi bi-heart"></i>
                 </li>
             </NavLink>
-            {isLogin === true ? (
+            {isLogin === true && token ? (
                <NavLink to="/">
                <li>
                     <i className='bi bi-box-arrow-right' 

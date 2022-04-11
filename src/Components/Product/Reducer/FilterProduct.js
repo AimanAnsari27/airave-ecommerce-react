@@ -8,11 +8,11 @@ export const FilterProduct = (product, {sort, categories, price}) =>{
     }
 
         // sort by price range
-        if(price){
-            sortedProduct = sortedProduct.filter((product)=>
-            product.price > price
-            )
-        }
+    if(price){
+        sortedProduct = sortedProduct.filter((product)=>
+        product.price > price
+        )
+    }
     // sort by categories
     if (!categories.length) 
         return sortedProduct;

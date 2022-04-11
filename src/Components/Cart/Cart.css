@@ -1,16 +1,29 @@
-/* .cart-container{
-    /* background-color: red; 
-} */
 .cart{
-    /* background-color: aqua; */
     display: flex;
     justify-content: space-between;
     margin: 4rem;
 }
 .price-table{
-    /* margin-top: 2rem; */
     padding: 1rem;
+    
 }
-.price-table > span{
-    padding: 1rem;
+.price-table span{
+    padding: 10px;
+}
+.empty-cart{
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.cart-img{
+    height: 40vh;
+}
+.cart-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
 }
