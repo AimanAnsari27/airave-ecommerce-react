@@ -10,7 +10,7 @@ const AuthProvider = ({children}) =>{
 
     const [isLogin, setIsLogin] = useState(false);
      const user =  localStorage.getItem('user')
-
+    const token = localStorage.getItem('token')
    
     
     const handleSingupData = async(email, password, firstName, lastName) =>{
@@ -36,21 +36,23 @@ const AuthProvider = ({children}) =>{
         try {
                 const res = await axios.post('/api/auth/login',getLoginValues);
                         if(res.status== 200 || res.status== 201){
-                            localStorage.setItem("token", res.data.encodedToken);
                             setIsLogin(true)
+
+                            localStorage.setItem("token", res.data.encodedToken);
                             navigate('/product')
                             localStorage.setItem("user",res.data.foundUser.firstName)
-                            console.log(res)
+                            console.log(res.data)
                         }
                       } catch (error) {
-                          console.log(error.response.data.errors)
+                          console.log(error)
+                        //   console.log(error.response.data.errors)
                        
     }
 }
 
 
     return(
-        <AuthContext.Provider value={{isLogin, setIsLogin, handleSingupData, handleLoginData , user}}>
+        <AuthContext.Provider value={{isLogin, setIsLogin, handleSingupData, handleLoginData , user, token}}>
             {children}
         </AuthContext.Provider>
     )
