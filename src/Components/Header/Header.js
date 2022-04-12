@@ -1,14 +1,10 @@
-import { Navigate, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useAuth } from '../../Context/AuthContext/AuthContext'
 import { useCart } from '../../Context/DataContext/CartContext';
-import { useNavigate } from 'react-router-dom';
 export default function Header(){
     const {isLogin, setIsLogin, user, token} = useAuth();
     const {cart} = useCart()
-    const navigate = useNavigate()
-    if(isLogin === false){
-        // localStorage.removeItem('user')
-    }
+    
     return(
         <nav>
         <div className="nav-brand ml-5">
@@ -24,7 +20,7 @@ export default function Header(){
             <i className="bi bi-search search-icon"></i>
         </div>
         <div>
-            <h5 className="mr-3"> {isLogin === true  && user  !== null ? `Hie , ${user}` : ''}</h5>
+            <h5 className="mr-3"> {isLogin  && user  !== null ? `Hie , ${user}` : ''}</h5>
         </div>
         <ul className="mr-5 gap-1">
             <NavLink to="/cart">
@@ -49,7 +45,7 @@ export default function Header(){
                     <i className="bi bi-heart"></i>
                 </li>
             </NavLink>
-            {isLogin === true && token ? (
+            {isLogin && token ? (
                <NavLink to="/">
                <li>
                     <i className='bi bi-box-arrow-right' 

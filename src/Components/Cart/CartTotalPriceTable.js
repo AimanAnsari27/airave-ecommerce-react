@@ -3,8 +3,8 @@ export const CartTotalPriceTable = () =>{
     const {cart} = useCart()
     
     const totalPrice = cart.item.reduce((acc, cv) => {
-        return acc + Number(cv.price)*cv.qty}
-    ,0)
+        return acc + (cv.price)*cv.qty
+    },0)
 
     const totalDiscount = cart.item.reduce((acc, cv) =>{
         return acc +(cv.price*(cv.discount/100))*cv.qty
