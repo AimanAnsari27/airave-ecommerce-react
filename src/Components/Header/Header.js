@@ -1,10 +1,12 @@
 import { NavLink } from 'react-router-dom'
 import { useAuth } from '../../Context/AuthContext/AuthContext'
 import { useCart } from '../../Context/DataContext/CartContext';
+import { useWishlist } from '../../Context/DataContext/WishlistContext';
+import Wishlist from '../../pages/Wishlist/Wishlist';
 export default function Header(){
     const {isLogin, setIsLogin, user, token} = useAuth();
     const {cart} = useCart()
-    
+    const {wishlist} = useWishlist()
     return(
         <nav>
         <div className="nav-brand ml-5">
@@ -42,7 +44,17 @@ export default function Header(){
             
             <NavLink to="/wishlist" >
                 <li>
-                    <i className="bi bi-heart"></i>
+                <div className="badge-wrapper">
+                    
+                    <i className="bi bi-heart fa-lg"></i>
+                    {isLogin ?
+                    <span className="icon-badge flex-align-center">
+                    {wishlist.length}</span>
+                    :
+                    <span></span> }
+                    
+                    
+                </div>
                 </li>
             </NavLink>
             {isLogin && token ? (

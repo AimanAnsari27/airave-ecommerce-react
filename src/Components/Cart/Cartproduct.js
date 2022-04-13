@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom";
 import { useCart } from "../../Context/DataContext/CartContext";
+import { useWishlist } from "../../Context/DataContext/WishlistContext";
 export const CartProduct = ({product}) =>{
 const {_id, name, image, description, price , discount} = product
     const {removeCartItem, updateCart} = useCart()
-    
+    const {addWishlist ,wishlist} = useWishlist()
+    const addToWishlistHandler = (product) =>{
+        addWishlist(product)
+        removeCartItem(product)
+    }
     return(
         <div>
             <div class="flex box-shadow-light pd-1" key={_id}>
@@ -55,14 +59,23 @@ const {_id, name, image, description, price , discount} = product
                                </i>
                             </button> 
                         </div>
-                        <Link to="/wishlist">
-                            <button class="btn btn-outline-primary width-100 mt-1">
-                                <span>Add to Wishlist</span>
-                                <span class="btn-icon">
-                                    <i class="bi bi-heart"></i>
-                                </span>
-                            </button>
-                        </Link>
+                        {wishlist.some((item) => item._id===product._id) ? 
+                        <button class="btn btn-outline-primary width-100 mt-1" >
+                            <span>Add to Wishlist</span>
+                            <span class="btn-icon">
+                                <i class="bi bi-heart"></i>
+                            </span>
+                        </button> :
+                        <button class="btn btn-outline-primary width-100 mt-1" onClick={() =>{
+                            addToWishlistHandler(product)
+                        }}>
+                            <span>Add to Wishlist</span>
+                            <span class="btn-icon">
+                                <i class="bi bi-heart"></i>
+                            </span>
+                        </button>}
+                            
+                        {/* </Link> */}
                     </div> 
                 </div> 
             </div>
