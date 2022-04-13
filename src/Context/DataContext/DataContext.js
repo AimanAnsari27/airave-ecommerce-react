@@ -48,7 +48,6 @@ const DataProvider =  ({children} ) =>{
             }
             
         },[]) 
-        console.log(product)   
     return(
         <DataContext.Provider value={{category, product, state, dispatch}}>
             {children}

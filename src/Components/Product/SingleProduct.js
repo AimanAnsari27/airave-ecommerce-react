@@ -2,51 +2,36 @@ import { Link } from 'react-router-dom'
 import { useAuth } from '../../Context/AuthContext/AuthContext'
 import { useCart } from '../../Context/DataContext/CartContext'
 import { useWishlist } from '../../Context/DataContext/WishlistContext'
-import { useNavigate } from 'react-router-dom'
 import './Product.css'
 export const SingleProducts  = ({product}) =>{
     const {isLogin} = useAuth()
     const {cart, addCartItem } = useCart();
     const {wishlist, addWishlist, removeWishlist} = useWishlist()
-    const navigate = useNavigate()
-//    const addWishlist1 = () =>{
-//        addWishlist({product})
-//    }
-   console.log(wishlist)
+
     return(
         <>
-             {cart===undefined ? <h1>Loading...</h1> : 
+             {!cart ? <h1>Loading...</h1> : 
             <>
                 {product.map((prod) =>
-                    <div className="card">
-
+                    <div className="card" key={prod._id}>
                         {isLogin ?(
-
- wishlist.some((item) => item._id === prod._id) ?
-                         <i className="bi bi-heart-fill wishlist" onClick={()=>{
-                            removeWishlist(prod)
-                         }}></i>
-                        :
-                        <i className="bi bi-heart wishlist" onClick={()=>
-                            {
-                                addWishlist(prod)
-                        }}></i>
-                    
-
+                            wishlist.some((item) => item._id === prod._id) ?
+                                <i className="bi bi-heart-fill wishlist" onClick={()=>{
+                                    removeWishlist(prod)
+                                }}>
+                                </i>
+                            :
+                                <i className="bi bi-heart wishlist" onClick={()=>
+                                {
+                                    addWishlist(prod)
+                                }}>
+                                </i>
                         ):(
-<Link to="/login">
-<i className="bi bi-heart wishlist"></i>   
-</Link>                     )}
-                        {/* {wishlist.some((item) => item._id === prod._id) ?
-                         <i className="bi bi-heart wishlist"></i>
-                        :
-                        <i className="bi bi-heart wishlist" onClick={()=>
-                            {
-                                addWishlist(prod)
-                        }}></i>
-                    } */}
-                       
-                            <img src={prod.image} alt={prod.name} className="img-sm"/>
+                            <Link to="/login">
+                                <i className="bi bi-heart wishlist"></i>   
+                            </Link>  
+                       )}
+                        <img src={prod.image} alt={prod.name} className="img-sm"/>
                             <div className="card-body">
                                 <div className="card-title">{prod.name}</div>
                                 <div className="card-description">{prod.description}</div>

@@ -75,7 +75,6 @@ const {_id, name, image, description, price , discount} = product
                             </span>
                         </button>}
                             
-                        {/* </Link> */}
                     </div> 
                 </div> 
             </div>

@@ -17,24 +17,31 @@ const WishlistProvider = ({children}) =>{
 
     const {isLogin}=useAuth()
     const [wishlist, setWishlist] = useState([])
-useEffect(()=>{
-    if(isLogin){
-    getWishlist()
-}
-},[])
+    useEffect(()=>{
+        if(isLogin){
+        getWishlist()
+    }
+    },[])
+
+    //getting wishlist data
     const getWishlist = async() =>{
-        const res = axios.get('/api/user/wishlist',{
+        try{
+            const res = axios.get('/api/user/wishlist',{
             headers:{
                 authorization:localStorage.getItem("token")
             }
         })
-        // if(wishlist===undefined){
-        //     setWishlist('loading...')
-        // }
         setWishlist(res.data.wishlist)
+        }
+        catch(err){
+            console.log(err)
+        }
 
     }
+
+    //adding data to wishlist
     const addWishlist = async(product) =>{
+        try{
         const res = await axios({
             method:'post',
             url:'/api/user/wishlist',
@@ -44,27 +51,27 @@ useEffect(()=>{
             headers:{
                 authorization:localStorage.getItem("token")
             }
-
+        })
+        setWishlist(res.data.wishlist)
         }
-            
-        )
-        console.log("added",res.data.wishlist)
-        setWishlist(res.data.wishlist)
-        // if(wishlist===undefined){
-        //     setWishlist('loading')
-        //     }
-        // }
-        // console.log("wishlist",addWishlist())
+        catch(err){
+            console.log(err)
+        }
     }
+
+    //removing data from wishlist
     const removeWishlist = async(product) =>{
-        const res = await axios.delete(`/api/user/wishlist/${product._id}`,
-        {headers:{
-            authorization:localStorage.getItem("token")
-        }})
-        console.log("deleted", res.data.wishlist)
-        setWishlist(res.data.wishlist)
+        try{
+            const res = await axios.delete(`/api/user/wishlist/${product._id}`,
+            {headers:{
+                authorization:localStorage.getItem("token")
+            }})
+            setWishlist(res.data.wishlist)
+        }
+        catch(err){
+            console.log(err)
+        }
     }
-// addWishlist()
     return(
         <WishlistContext.Provider value={{wishlist, addWishlist, removeWishlist}}>
             {children}
