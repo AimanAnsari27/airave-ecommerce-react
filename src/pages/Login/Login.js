@@ -13,7 +13,6 @@ export default function Login(){
     const handleData = (e)=>{
         setLogin({...login, [e.target.name]:e.target.value})
     }
-    console.log(login)
 
 
     const loginHandler = (e) =>{

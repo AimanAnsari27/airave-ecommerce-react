@@ -35,6 +35,8 @@ export const SingleProducts  = ({product}) =>{
                             <div className="card-body">
                                 <div className="card-title">{prod.name}</div>
                                 <div className="card-description">{prod.description}</div>
+                                <div className="card-description">{prod.rating}</div>
+
                                 {prod.discount ? 
                                     <div className="price">Rs {prod.price * (1- (prod.discount/100))}
                                         <del className="gray-text h6 ml-1">{prod.price}</del>

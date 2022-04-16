@@ -11,10 +11,7 @@ const useWishlist = () => useContext(WishlistContext)
 
 
 const WishlistProvider = ({children}) =>{
-    const initialState = {
-        itemsInWishlist :[]
-    }
-
+   
     const {isLogin}=useAuth()
     const [wishlist, setWishlist] = useState([])
     useEffect(()=>{

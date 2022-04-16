@@ -1,7 +1,7 @@
 import { useData } from "../../Context/DataContext/DataContext"
 
 export const Filter = () =>{
-    const{state : {categories, sort, price}, dispatch, category} = useData()
+    const{state : {categories, sort, price, rating}, dispatch, category} = useData()
     return(
         <div>
             <div class=""> 
@@ -41,7 +41,7 @@ export const Filter = () =>{
                     <li>Sort By</li>
                     <li>
                         <input type="radio" 
-                            name="rating" 
+                            name="price-sort" 
                             id="high-to-low" 
                             onChange = {() =>
                                 dispatch({
@@ -56,7 +56,7 @@ export const Filter = () =>{
                     <li>
                         <input 
                             type="radio"
-                            name="rating"
+                            name="price-sort"
                             id="low-to-high"
                             onChange = {() =>
                                 dispatch({
@@ -97,7 +97,57 @@ export const Filter = () =>{
                 </ul>
             </div>   
             <hr />
-            
+            <div class="mb-1 mt-1">
+                <ul class="list-item">
+                    <li>Rating</li>
+                    <li>
+                        <label>
+                        <input type="radio" 
+                        value="4"
+                        name="rating"
+                        onChange={() =>{
+                            dispatch({
+                                type:'FILTER_BY_RATING',
+                                payload:"4"
+                            })
+                        }} 
+                        checked={rating==="4" ? true : false}
+                        />4 star</label>
+                        
+                    </li>
+                    <li>
+                        <label>
+                        <input type="radio" 
+                        value="4"
+                        name="rating"
+                        onChange={() =>{
+                            dispatch({
+                                type:'FILTER_BY_RATING',
+                                payload:"3"
+                            })
+                        }} 
+                        checked={rating==="3" ? true : false}
+                        />3 star</label>
+                        
+                    </li>
+                    <li>
+                        <label>
+                        <input type="radio" 
+                        value="4"
+                        name="rating"
+                        onChange={() =>{
+                            dispatch({
+                                type:'FILTER_BY_RATING',
+                                payload:"2"
+                            })
+                        }} 
+                        checked={rating==="2" ? true : false}
+                        />2 star</label>
+                        
+                    </li>
+                </ul>
+            </div>   
+            <hr />
         </div>
     </div>
     )
