@@ -31,16 +31,24 @@ export const SingleProducts  = ({product}) =>{
                                 <i className="bi bi-heart wishlist"></i>   
                             </Link>  
                        )}
+                       <div className="card-rating">
+                                    <span className='pd--5'>{prod.rating}</span>
+                                    <span><i className='bi bi-star-fill star'></i></span>
+                                    {/* {prod.rating.map((i) =>
+                                    <i className='bi bi-star-fill'></i>)} */}
+                                </div>
                         <img src={prod.image} alt={prod.name} className="img-sm"/>
                             <div className="card-body">
                                 <div className="card-title">{prod.name}</div>
                                 <div className="card-description">{prod.description}</div>
-                                <div className="card-description">{prod.rating}</div>
+                                
 
                                 {prod.discount ? 
                                     <div className="price">Rs {prod.price * (1- (prod.discount/100))}
-                                        <del className="gray-text h6 ml-1">{prod.price}</del>
-                                        <span className="text-accent h6"> ({prod.discount}% oFF)</span>
+                                        <span className='discounted-price'>
+                                        <del className="gray-text">{prod.price}</del>
+                                        <span className="text-accent"> ({prod.discount}% oFF)</span>
+                                        </span>
                                     </div>  
                                      : 
                                     <div className="price">{prod.price}</div>

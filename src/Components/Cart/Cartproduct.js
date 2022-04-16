@@ -1,5 +1,9 @@
 import { useCart } from "../../Context/DataContext/CartContext";
 import { useWishlist } from "../../Context/DataContext/WishlistContext";
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.configure()
 export const CartProduct = ({product}) =>{
 const {_id, name, image, description, price , discount} = product
     const {removeCartItem, updateCart} = useCart()
@@ -20,7 +24,10 @@ const {_id, name, image, description, price , discount} = product
                             </div>
                             <div>
                                 <i class="fa fa-trash fa-1x text-accent"
-                                    onClick={()=>removeCartItem(product)}>
+                                    onClick={()=>{
+                                        removeCartItem(product)
+                                        toast.error('item removed',{autoClose:1000})}
+                                    }>
                                 </i>
                             </div>
                         </div>
@@ -45,8 +52,14 @@ const {_id, name, image, description, price , discount} = product
                                 ></i>
                             </button> 
                             <span class="bold-text pd--5">
-                                {product.qty === 0  ? null : product.qty}
+                                {product.qty}
                             </span>
+                            {product.qty === 1 ? 
+                                <button class="btn-icon-round btn-icon-sm box-shadow-bottom" disabled>
+                                <i class="fa fa-minus">
+                               </i>
+                            </button>
+                            :
                             <button class="btn-icon-round btn-icon-sm box-shadow-bottom">
                                 <i class="fa fa-minus"
                                     onClick={() =>
@@ -58,17 +71,22 @@ const {_id, name, image, description, price , discount} = product
                                 >
                                </i>
                             </button> 
+}
                         </div>
                         {wishlist.some((item) => item._id===product._id) ? 
                         <button class="btn btn-outline-primary width-100 mt-1" >
                             <span>Add to Wishlist</span>
                             <span class="btn-icon">
-                                <i class="bi bi-heart"></i>
+                                <i class="bi bi-heart" onClick={()=>{
+                                    toast.error("Item is already in wishlist", {autoClose:1000})
+                                }}></i>
                             </span>
                         </button> :
-                        <button class="btn btn-outline-primary width-100 mt-1" onClick={() =>{
-                            addToWishlistHandler(product)
-                        }}>
+                        <button class="btn btn-outline-primary width-100 mt-1" 
+                            onClick={() =>{
+                                addToWishlistHandler(product)
+                                toast.success('Item is successfully added',{autoClose:1000}) 
+                            }}>
                             <span>Add to Wishlist</span>
                             <span class="btn-icon">
                                 <i class="bi bi-heart"></i>

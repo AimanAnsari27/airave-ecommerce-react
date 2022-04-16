@@ -2,7 +2,11 @@ import { useAuth } from "../../Context/AuthContext/AuthContext"
 import { useCart } from "../../Context/DataContext/CartContext"
 import { useWishlist } from "../../Context/DataContext/WishlistContext"
 import { EmptyWishlist } from "./EmptyWishlist"
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Wishlist.css'
+
+toast.configure()
 export default function Wishlist(){
     const {wishlist, removeWishlist} = useWishlist()
     const {addCartItem, cart} = useCart()
@@ -11,6 +15,7 @@ export default function Wishlist(){
     const addToCart = (item) =>{
         addCartItem(item)
         removeWishlist(item)
+        toast.success("Item is successfully added to cart", {autoClose:1000})
     }
 
     return(
@@ -25,6 +30,7 @@ export default function Wishlist(){
                         <i className="bi bi-heart-fill wishlist"
                             onClick={()=>{
                             removeWishlist(item)
+                            toast.error("Item is removed from wishlist", {autoclose:1000})
                         }}>
                         </i>
                         <img src={item.image} className="img-sm" alt={item.name}/>
@@ -33,7 +39,10 @@ export default function Wishlist(){
                             <div className="card-description">{item.description}</div>
                             <div className="price">Rs. {item.price}</div>
                                 {cart.item.some((itemsCart) => itemsCart._id=== item._id) ? (
-                                    <button className="btn btn-accent width-100 mt-1" >
+                                    <button className="btn btn-accent width-100 mt-1"
+                                    onClick={() =>{
+                                        toast.warning("Item is already in cart", {autoClose:1000})
+                                    }} >
                                         Add to Cart
                                     </button>
                                 ) :(
