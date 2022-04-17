@@ -13,7 +13,7 @@ export const products = [
     price: "5000",
     categoryName: "Shoes",
     brandName: "puma",
-    discount: "50",
+    discount: "5",
     rating: "5",
     image:"/Images/Shoes/adidas.webp"
   },
@@ -35,7 +35,7 @@ export const products = [
     price: "6000",
     categoryName: "Trolley",
     brandName: "VIP",
-    discount: "25",
+    discount: "",
     rating: "3",
     image:"/Images/Bags/VIP-bags.jpg"
   },
@@ -57,8 +57,8 @@ export const products = [
     price: "2000",
     categoryName: "Sunglasses",
     brandName: "Fastrack",
-    discount: "20%",
-    rating: "1",
+    discount: "",
+    rating: "4",
     image:"/Images/Sunglasses/sunglasses.webp"
   },
   {
@@ -70,24 +70,24 @@ export const products = [
     brandName: "Travoc",
     discount: "",
     rating: "5",
-    image:"/Images/Bagpack/bacbag.jpg"
+    image:"/Images/Bagpack/travoc.jpg"
   },
   
   {
     _id: uuid(),
     name: "American Tourister",
-    description: "Grey Textured Hard-Sided Medium",
+    description: "Light weight bags",
     price: "10500",
     categoryName: "Trolley",
     brandName: "American Tourister",
-    discount: "",
+    discount: "12",
     rating: "4",
     image:"/Images/Bags/american-tourister2.jpg"
   },
   {
     _id: uuid(),
     name: "Sky bags",
-    description: "Grey Textured Hard-Sided Medium",
+    description: "Blue Textured bag",
     price: "8000",
     categoryName: "Trolley",
     brandName: "Sky bags",
@@ -98,7 +98,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Sky bags",
-    description: "Grey Textured Hard-Sided Medium",
+    description: "Stylish bags",
     price: "10500",
     categoryName: "Trolley",
     brandName: "Sky bags",
@@ -109,12 +109,100 @@ export const products = [
   {
     _id: uuid(),
     name: "VIP bags",
-    description: "Grey Textured Hard-Sided Medium",
+    description: "medium stylish bag",
     price: "7500",
     categoryName: "Trolley",
     brandName: "VIP",
     discount: "10",
     rating: "3",
     image:"/Images/Bags/VIP2-bags.jpg"
+  },
+  {
+    _id: uuid(),
+    name: "American Tourister",
+    description: "hard sided bag",
+    price: "8000",
+    categoryName: "Trolley",
+    brandName: "American tourister",
+    discount: "10",
+    rating: "4",
+    image:"/Images/Bags/american-tourister.jpg"
+  },
+  {
+    _id: uuid(),
+    name: "Arcteryx jackets",
+    description: "Stylish jackets ",
+    price: "6000",
+    categoryName: "Jacket",
+    brandName: "arcteryx",
+    discount: "20",
+    rating: "4",
+    image:"/Images/Jackets/arcteryx-jackets.webp"
+  },
+  {
+    _id: uuid(),
+    name: "Arcteryx jackets",
+    description: "Stylish and warm jackets ",
+    price: "5500",
+    categoryName: "Jacket",
+    brandName: "arcteryx",
+    discount: "",
+    rating: "5",
+    image:"/Images/Jackets/arcteryx-jackets2.webp"
+  },
+  {
+    _id: uuid(),
+    name: "Arcteryx jackets",
+    description: "Stylish jackets ",
+    price: "4200",
+    categoryName: "Jacket",
+    brandName: "arcteryx",
+    discount: "",
+    rating: "4",
+    image:"/Images/Jackets/arcteryx-jackets3.webp"
+  },
+  {
+    _id: uuid(),
+    name: "Arcteryx jackets",
+    description: "warm jackets ",
+    price: "2000",
+    categoryName: "Jacket",
+    brandName: "arcteryx",
+    discount: "30",
+    rating: "3",
+    image:"/Images/Jackets/arcteryx-jackets4.webp"
+  },
+  {
+    _id: uuid(),
+    name: "Adidas",
+    description: "Stylish shoes",
+    price: "3500",
+    categoryName: "Shoes",
+    brandName: "adidas",
+    discount: "20",
+    rating: "4",
+    image:"/Images/Shoes/adidas1.webp"
+  },
+  {
+    _id: uuid(),
+    name: "Adidas",
+    description: "Men running shoes",
+    price: "5500",
+    categoryName: "Shoes",
+    brandName: "adidas",
+    discount: "",
+    rating: "4",
+    image:"/Images/Shoes/adidas2.webp"
+  },
+  {
+    _id: uuid(),
+    name: "Chelsea",
+    description: "women stylish shoes",
+    price: "4500",
+    categoryName: "Shoes",
+    brandName: "Chelsea",
+    discount: "10",
+    rating: "3",
+    image:"/Images/Shoes/chelsea.webp"
   },
 ];

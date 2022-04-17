@@ -1,10 +1,9 @@
 import { useData } from "../../Context/DataContext/DataContext"
 
 export const Filter = () =>{
-    const{state : {categories, sort, price}, dispatch, category} = useData()
+    const{state : {categories, sort, price, rating}, dispatch, category} = useData()
     return(
         <div>
-            <div class=""> 
                 <div class="flex pd-1 gap-4">
                     <span>Filter</span>
                     <span class="filter-text"
@@ -19,8 +18,9 @@ export const Filter = () =>{
                 </div>
             <hr />
             <div class="pd-1">
-                <p class="text-dark">Price</p>
+                <p class="text-primary">Price</p>
                     <input 
+                    className="width-100"
                         type="range"
                         min="1000"
                         max="15000"
@@ -35,13 +35,12 @@ export const Filter = () =>{
                     />
                     <p id="price" class="text-gray text-xsm">{price}</p>
             </div>
-            <hr />
             <div class="mt-1">    
                 <ul class="list-item">
-                    <li>Sort By</li>
+                    <li className="text-primary">Sort By</li>
                     <li>
                         <input type="radio" 
-                            name="rating" 
+                            name="price-sort" 
                             id="high-to-low" 
                             onChange = {() =>
                                 dispatch({
@@ -51,12 +50,12 @@ export const Filter = () =>{
                             checked={sort === 'HighToLow' ? true :  false}
                         >
                         </input>
-                        <span>Price - High to Low</span>
+                        <span className="gray-text">Price - High to Low</span>
                     </li>
                     <li>
                         <input 
                             type="radio"
-                            name="rating"
+                            name="price-sort"
                             id="low-to-high"
                             onChange = {() =>
                                 dispatch({
@@ -66,14 +65,13 @@ export const Filter = () =>{
                             checked={sort === 'LowToHigh' ? true :  false}
                             >
                         </input>
-                        <span>Price - Low to high</span>
+                        <span className="gray-text">Price - Low to high</span>
                     </li>
                 </ul>
             </div>
-            <hr />
             <div class="mb-1 mt-1">
                 <ul class="list-item">
-                    <li>Categories</li>
+                    <li className="text-primary">Categories</li>
                         {category.map(({categoryName}) =>
                             <li>
                                 <input 
@@ -91,14 +89,61 @@ export const Filter = () =>{
                                     }}
                                     checked={categories.includes(categoryName.toLowerCase())}
                                 />
-                                <span>{categoryName}</span>
+                                <span className="gray-text">{categoryName}</span>
                             </li>
                         )}
                 </ul>
             </div>   
-            <hr />
-            
-        </div>
+            <div class="mb-1 mt-1">
+                <ul class="list-item">
+                    <li className="text-primary">Rating</li>
+                    <li>
+                        <label className="gray-text">
+                        <input type="radio" 
+                        value="4"
+                        name="rating"
+                        onChange={() =>{
+                            dispatch({
+                                type:'FILTER_BY_RATING',
+                                payload:"4"
+                            })
+                        }} 
+                        checked={rating==="4" ? true : false}
+                        />4 star and above</label>
+                        
+                    </li>
+                    <li>
+                        <label className="gray-text">
+                        <input type="radio" 
+                        value="4"
+                        name="rating"
+                        onChange={() =>{
+                            dispatch({
+                                type:'FILTER_BY_RATING',
+                                payload:"3"
+                            })
+                        }} 
+                        checked={rating==="3" ? true : false}
+                        />3 star and above</label>
+                        
+                    </li>
+                    <li>
+                        <label className="gray-text">
+                        <input type="radio" 
+                        value="4"
+                        name="rating"
+                        onChange={() =>{
+                            dispatch({
+                                type:'FILTER_BY_RATING',
+                                payload:"2"
+                            })
+                        }} 
+                        checked={rating==="2" ? true : false}
+                        />2 star and above</label>
+                        
+                    </li>
+                </ul>
+            </div>   
     </div>
     )
 }

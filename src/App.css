@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,700&family=Mouse+Memoirs&family=Pacifico&display=swap');
 :root{
-  --hero-background:rgb(232, 234, 235);
+  --hero-background:rgb(232, 245, 250);
 }
+
 .hero-section{
   width: 30rem;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 1rem;
   gap: 1rem;
+  font-family: 'Alegreya', serif;
   background-color:var(--hero-background) ;
 }
 .hero{
@@ -22,4 +24,8 @@
   object-fit:contain ;
   background-repeat: no-repeat;
 }
-
+.category-card{
+ 
+  height: max-content;
+ 
+}

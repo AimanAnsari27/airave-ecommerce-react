@@ -4,7 +4,6 @@ import {Header, Footer} from './Components/index'
 function App() {
   return (
     <div className="App">
-      
       <Header />
         <Routers />
       <Footer />

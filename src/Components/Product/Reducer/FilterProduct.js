@@ -1,4 +1,5 @@
-export const FilterProduct = (product, {sort, categories, price}) =>{
+export const FilterProduct = (product, {sort, categories, price, rating}) =>{
+   
     let sortedProduct;
 
     // sort by price
@@ -20,7 +21,14 @@ export const FilterProduct = (product, {sort, categories, price}) =>{
             return categories.includes(product.categoryName.toLowerCase());
     });
 
+    if(rating){
+        sortedProduct = sortedProduct.filter((product)=>{
+        return product.rating >= rating}
+        )
+        return sortedProduct;
 
+    }
+console.log(sortedProduct)
     return sortedProduct
 }
 

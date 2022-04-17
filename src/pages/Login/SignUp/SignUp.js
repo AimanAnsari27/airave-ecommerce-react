@@ -35,7 +35,6 @@ export default function SignUp(){
         else{
             setIsError('please fill all the filed')
         }
-        // setIsError('')
     }
     return(
         <div>

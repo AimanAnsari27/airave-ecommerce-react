@@ -23,6 +23,10 @@ export const filterReducer= ( state, action) =>{
             return{
                 ...state, price : action.payload
             }
+        case 'FILTER_BY_RATING':
+            return{
+                ...state, rating:action.payload
+            }
 
         case 'CLEAR_ALL':
             return   initialState

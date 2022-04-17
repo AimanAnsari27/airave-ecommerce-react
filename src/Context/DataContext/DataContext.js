@@ -6,6 +6,7 @@ const initialState = {
     sort:"",
     categories: [],
     price: 1000,
+    rating:1
 }
 
 const DataContext = createContext()
