@@ -34,8 +34,6 @@ export const SingleProducts  = ({product}) =>{
                        <div className="card-rating">
                                     <span className='pd--5'>{prod.rating}</span>
                                     <span><i className='bi bi-star-fill star'></i></span>
-                                    {/* {prod.rating.map((i) =>
-                                    <i className='bi bi-star-fill'></i>)} */}
                                 </div>
                         <img src={prod.image} alt={prod.name} className="img-sm"/>
                             <div className="card-body">
