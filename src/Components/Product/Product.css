@@ -1,58 +1,58 @@
-:root{
-    --box-shadow : rgba(217,217,217,1)
+:root {
+  --box-shadow: rgba(217, 217, 217, 1);
 }
 
-.product-container{
-    display: flex;
-    gap: 1rem;
+.product-container {
+  display: flex;
+  gap: 1rem;
 }
-.product-listing{
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 60rem;
-    margin-bottom: 2rem;
-    gap: 1rem;
-    margin-top: 1rem;
-    justify-content: space-between;
+.product-listing {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 60rem;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: space-around;
 }
-.card{
-    width: 200px;
-    height: 350px;
+.card {
+  width: 200px;
+  height: 350px;
 }
-.wishlist{
-    position: absolute;
-    padding: 1rem 0rem 0rem 10rem;
+.wishlist {
+  position: absolute;
+  padding: 1rem 0rem 0rem 10rem;
 }
-.wishlist:hover{
-   color: var(--danger-color);
-    border-radius: 50px;
-    height: 1rem;
+.wishlist:hover {
+  color: var(--danger-color);
+  border-radius: 50px;
+  height: 1rem;
 }
-.filter-text{
-    cursor: pointer;
-    color: var(--accent-color);
-    right: 0;
+.filter-text {
+  cursor: pointer;
+  color: var(--accent-color);
+  right: 0;
 }
-.filters{
-    box-shadow: 6px 12px 16px 0px var(--box-shadow);
-    padding: 1rem;    
-    width: 260px;
+.filters {
+  box-shadow: 6px 12px 16px 0px var(--box-shadow);
+  padding: 1rem;
+  width: 260px;
 }
-.card:hover{
-    box-shadow:0px 4px 22px 0px var(--box-shadow); 
+.card:hover {
+  box-shadow: 0px 4px 22px 0px var(--box-shadow);
 }
-.discounted-price{
-    font-size: 10px;
+.discounted-price {
+  font-size: 10px;
 }
-.card-rating{
-    background-color: rgb(251, 253, 192);
-    right: 0;
-    padding: 0px 10px 0px 0px;
-    font-size: 14px;
-    position: absolute;
-    top: 11rem;
+.card-rating {
+  background-color: rgb(251, 253, 192);
+  right: 0;
+  padding: 0px 10px 0px 0px;
+  font-size: 14px;
+  position: absolute;
+  top: 11rem;
 }
-.star{
-    font-size: 14px;
-    color: var(--tertiary-color);
+.star {
+  font-size: 14px;
+  color: var(--tertiary-color);
 }

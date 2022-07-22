@@ -15,7 +15,7 @@ export const products = [
     brandName: "puma",
     discount: "5",
     rating: "5",
-    image:"/Images/Shoes/adidas.webp"
+    image: "/Images/Shoes/adidas.webp",
   },
   {
     _id: uuid(),
@@ -26,7 +26,7 @@ export const products = [
     brandName: "patagonia",
     discount: "10",
     rating: "4",
-    image:"/Images/Jackets/patagonia-jackets.webp"
+    image: "/Images/Jackets/patagonia-jackets.webp",
   },
   {
     _id: uuid(),
@@ -37,7 +37,7 @@ export const products = [
     brandName: "VIP",
     discount: "",
     rating: "3",
-    image:"/Images/Bags/VIP-bags.jpg"
+    image: "/Images/Bags/VIP-bags.jpg",
   },
   {
     _id: uuid(),
@@ -48,7 +48,7 @@ export const products = [
     brandName: "American Tourister",
     discount: "40",
     rating: "2",
-    image:"/Images/Bagpack/travoc.jpg"
+    image: "/Images/Bagpack/travoc.jpg",
   },
   {
     _id: uuid(),
@@ -59,7 +59,7 @@ export const products = [
     brandName: "Fastrack",
     discount: "",
     rating: "4",
-    image:"/Images/Sunglasses/sunglasses.webp"
+    image: "/Images/Sunglasses/sunglasses.webp",
   },
   {
     _id: uuid(),
@@ -70,19 +70,19 @@ export const products = [
     brandName: "Travoc",
     discount: "",
     rating: "5",
-    image:"/Images/Bagpack/travoc.jpg"
+    image: "/Images/Bagpack/travoc.jpg",
   },
-  
+
   {
     _id: uuid(),
     name: "American Tourister",
     description: "Light weight bags",
-    price: "10500",
+    price: "12000",
     categoryName: "Trolley",
     brandName: "American Tourister",
-    discount: "12",
+    discount: "",
     rating: "4",
-    image:"/Images/Bags/american-tourister2.jpg"
+    image: "/Images/Bags/american-tourister2.jpg",
   },
   {
     _id: uuid(),
@@ -93,7 +93,7 @@ export const products = [
     brandName: "Sky bags",
     discount: "10",
     rating: "5",
-    image:"/Images/Bags/skybags.jpg"
+    image: "/Images/Bags/skybags.jpg",
   },
   {
     _id: uuid(),
@@ -104,7 +104,7 @@ export const products = [
     brandName: "Sky bags",
     discount: "",
     rating: "4",
-    image:"/Images/Bags/skybags2.jpg"
+    image: "/Images/Bags/skybags2.jpg",
   },
   {
     _id: uuid(),
@@ -115,7 +115,7 @@ export const products = [
     brandName: "VIP",
     discount: "10",
     rating: "3",
-    image:"/Images/Bags/VIP2-bags.jpg"
+    image: "/Images/Bags/VIP2-bags.jpg",
   },
   {
     _id: uuid(),
@@ -126,7 +126,7 @@ export const products = [
     brandName: "American tourister",
     discount: "10",
     rating: "4",
-    image:"/Images/Bags/american-tourister.jpg"
+    image: "/Images/Bags/american-tourister.jpg",
   },
   {
     _id: uuid(),
@@ -137,7 +137,7 @@ export const products = [
     brandName: "arcteryx",
     discount: "20",
     rating: "4",
-    image:"/Images/Jackets/arcteryx-jackets.webp"
+    image: "/Images/Jackets/arcteryx-jackets.webp",
   },
   {
     _id: uuid(),
@@ -148,7 +148,7 @@ export const products = [
     brandName: "arcteryx",
     discount: "",
     rating: "5",
-    image:"/Images/Jackets/arcteryx-jackets2.webp"
+    image: "/Images/Jackets/arcteryx-jackets2.webp",
   },
   {
     _id: uuid(),
@@ -159,7 +159,7 @@ export const products = [
     brandName: "arcteryx",
     discount: "",
     rating: "4",
-    image:"/Images/Jackets/arcteryx-jackets3.webp"
+    image: "/Images/Jackets/arcteryx-jackets3.webp",
   },
   {
     _id: uuid(),
@@ -170,7 +170,7 @@ export const products = [
     brandName: "arcteryx",
     discount: "30",
     rating: "3",
-    image:"/Images/Jackets/arcteryx-jackets4.webp"
+    image: "/Images/Jackets/arcteryx-jackets4.webp",
   },
   {
     _id: uuid(),
@@ -181,7 +181,7 @@ export const products = [
     brandName: "adidas",
     discount: "20",
     rating: "4",
-    image:"/Images/Shoes/adidas1.webp"
+    image: "/Images/Shoes/adidas1.webp",
   },
   {
     _id: uuid(),
@@ -192,7 +192,7 @@ export const products = [
     brandName: "adidas",
     discount: "",
     rating: "4",
-    image:"/Images/Shoes/adidas2.webp"
+    image: "/Images/Shoes/adidas2.webp",
   },
   {
     _id: uuid(),
@@ -203,6 +203,6 @@ export const products = [
     brandName: "Chelsea",
     discount: "10",
     rating: "3",
-    image:"/Images/Shoes/chelsea.webp"
+    image: "/Images/Shoes/chelsea.webp",
   },
 ];
