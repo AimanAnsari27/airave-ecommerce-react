@@ -10,10 +10,12 @@ export const FilterProduct = (product, { sort, categories, price, rating }) => {
   }
 
   //sort by category
-  if (!categories.length) return sortedProduct;
-  sortedProduct = sortedProduct.filter((product) => {
-    return categories.includes(product.categoryName.toLowerCase());
-  });
+  if (categories.length) {
+    sortedProduct = sortedProduct.filter((product) => {
+      return categories.includes(product.categoryName.toLowerCase());
+    });
+  }
+
   //sort by rating
   if (rating) {
     sortedProduct = sortedProduct.filter((product) => {
@@ -21,6 +23,7 @@ export const FilterProduct = (product, { sort, categories, price, rating }) => {
     });
     return sortedProduct;
   }
+
   // sort by price range will work later
   //   if (price) {
   //     sortedProduct = sortedProduct.filter((product) => {
@@ -29,5 +32,6 @@ export const FilterProduct = (product, { sort, categories, price, rating }) => {
   //     return sortedProduct;
   //   }
   // sort by categories
+  console.log(sortedProduct);
   return sortedProduct;
 };

@@ -43,7 +43,7 @@ export const CartProduct = ({ product }) => {
           )}
 
           <div class='quantity-btn mt-1 gap-2'>
-            {product.qty === 1 ? (
+            {product.qty <= 1 ? (
               <button
                 class='btn-icon-round btn-icon-sm box-shadow-bottom'
                 disabled
@@ -63,7 +63,9 @@ export const CartProduct = ({ product }) => {
                 ></i>
               </button>
             )}
-            <span class='bold-text pd--5'>{product.qty}</span>
+            <span class='bold-text pd--5'>
+              {product.qty >= 1 ? product.qty : 1}
+            </span>
 
             <button class='btn-icon-round btn-icon-sm box-shadow-bottom'>
               <i

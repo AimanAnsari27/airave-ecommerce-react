@@ -6,6 +6,7 @@ export const Filter = () => {
     dispatch,
     category,
   } = useData();
+  console.log(rating);
   return (
     <div>
       <div class='flex pd-1 gap-4'>
