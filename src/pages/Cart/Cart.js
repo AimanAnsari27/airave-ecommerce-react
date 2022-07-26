@@ -5,6 +5,9 @@ import { useCart } from "../../Context/DataContext/CartContext";
 import { useAuth } from "../../Context/AuthContext/AuthContext";
 import Login from "../Login/Login";
 import { EmptyCart } from "./EmptyCart/EmptyCart";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export default function Cart() {
   const { cart } = useCart();
   const { state } = useAuth();
@@ -35,6 +38,7 @@ export default function Cart() {
           <Login />
         </div>
       )}
+      <ToastContainer />
     </div>
   );
 }

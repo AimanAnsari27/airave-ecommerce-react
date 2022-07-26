@@ -5,9 +5,10 @@ import { useWishlist } from "../../Context/DataContext/WishlistContext";
 import { toast, ToastContainer } from "react-toastify";
 export default function Header() {
   const {
-    state: { isAuthenticated, user, token },
+    state: { isAuthenticated, user, token, email },
     dispatch,
   } = useAuth();
+  console.log({ isAuthenticated, user, token, email });
   const { cart } = useCart();
   const { wishlist } = useWishlist();
   const navigate = useNavigate();

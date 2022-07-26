@@ -5,6 +5,7 @@ export const authReducer = (state, action) => {
         isAuthenticated: true,
         token: action.payload.encodedToken,
         user: action.payload.foundUser.firstName,
+        email: action.payload.foundUser.email,
       };
     case "signup":
       return {

@@ -12,7 +12,9 @@ const AuthProvider = ({ children }) => {
     isAuthenticated: localStorage.getItem("token") ? true : false,
     token: localStorage.getItem("token") ? localStorage.getItem("token") : null,
     user: localStorage.getItem("user") ? localStorage.getItem("user") : null,
+    email: "",
   });
+  let email;
 
   const handleSingupData = async (firstName, lastName, email, password) => {
     const getValues = { firstName, lastName, email, password };
@@ -49,23 +51,25 @@ const AuthProvider = ({ children }) => {
           "user",
           res.data.foundUser.firstName + " " + res.data.foundUser.lastName
         );
+        email = res.data.foundUser.email;
         dispatch({
           type: "login",
           payload: res.data,
         });
+
         toast.success("Logged in successfully", {
           theme: "colored",
           autoClose: 2000,
         });
       }
     } catch (error) {
-      if (error.response.status === 404) {
+      if ((error.response.status = 404)) {
         toast.error("Email is not register", {
           theme: "colored",
           autoClose: 2000,
         });
       }
-      if (error.response.status === 401) {
+      if ((error.response.status = 401)) {
         toast.error("Password does not match", {
           theme: "colored",
           autoClose: 2000,
@@ -81,6 +85,7 @@ const AuthProvider = ({ children }) => {
         handleLoginData,
         state,
         dispatch,
+        email,
       }}
     >
       {children}

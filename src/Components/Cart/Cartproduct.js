@@ -64,7 +64,7 @@ export const CartProduct = ({ product }) => {
               </button>
             )}
             <span class='bold-text pd--5'>
-              {product.qty >= 1 ? product.qty : 1}
+              {product.qty >= 1 ? product.qty : (product.qty = 1)}
             </span>
 
             <button class='btn-icon-round btn-icon-sm box-shadow-bottom'>

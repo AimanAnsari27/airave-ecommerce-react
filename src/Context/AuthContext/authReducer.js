@@ -15,6 +15,10 @@ export const authReducer = (state, action) => {
       return {
         isAuthenticated: false,
       };
+    case "email":
+      return {
+        email: action.payload,
+      };
 
     default:
       break;
