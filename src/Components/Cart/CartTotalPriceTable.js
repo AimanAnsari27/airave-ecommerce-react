@@ -2,11 +2,10 @@ import { useAuth } from "../../Context/AuthContext/AuthContext";
 import { useCart } from "../../Context/DataContext/CartContext";
 import { toast } from "react-toastify";
 export const CartTotalPriceTable = () => {
-  const { cart } = useCart();
+  const { cart, clearCart } = useCart();
   const {
     state: { email },
   } = useAuth();
-  console.log("email", email);
   const totalPrice = cart.item.reduce((acc, cv) => {
     if (cv.qty >= 1) {
       return acc + cv.price * cv.qty;
@@ -22,6 +21,8 @@ export const CartTotalPriceTable = () => {
   const totalAmount = cart.item.reduce((acc, cv) => {
     return totalPrice - totalDiscount;
   }, 0);
+  const getAllProductsInCart = cart;
+  console.log("get", getAllProductsInCart);
   const loadScript = (src) => {
     return new Promise((resolve) => {
       const script = document.createElement("script");
@@ -36,7 +37,6 @@ export const CartTotalPriceTable = () => {
     });
   };
   const loadRazorpayScript = async () => {
-    console.log("emaillllll", email);
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
     );
@@ -52,9 +52,10 @@ export const CartTotalPriceTable = () => {
       name: "Airave Mart",
       handler: function (response) {
         toast.success("Order Successful");
+        clearCart();
       },
       prefill: {
-        email: email,
+        email: email !== "" ? email : "testuser123@gmail.com",
         contact: "9876543210",
       },
       theme: {
@@ -86,10 +87,7 @@ export const CartTotalPriceTable = () => {
       <span class='justify-space-between'>
         You save Rs.{totalDiscount} in this order
       </span>
-      <button
-        class='btn btn-accent width-100 mt-2'
-        onClick={() => loadRazorpayScript()}
-      >
+      <button class='btn btn-accent width-100 mt-2' onClick={() => clearCart()}>
         Place Order
       </button>
     </div>

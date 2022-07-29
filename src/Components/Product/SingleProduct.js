@@ -8,6 +8,7 @@ export const SingleProducts = ({ product }) => {
   const { cart, addCartItem } = useCart();
   const { wishlist, addWishlist, removeWishlist } = useWishlist();
   const { isAuthenticated } = state;
+  console.log("from product", cart);
   return (
     <>
       {!cart ? (

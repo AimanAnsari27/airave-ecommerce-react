@@ -12,6 +12,7 @@ export default function Cart() {
   const { cart } = useCart();
   const { state } = useAuth();
   const { isAuthenticated } = state;
+  console.log("CART", cart);
   return (
     <div>
       {isAuthenticated ? (
