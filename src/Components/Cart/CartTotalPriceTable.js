@@ -1,5 +1,6 @@
 import { useAuth } from "../../Context/AuthContext/AuthContext";
 import { useCart } from "../../Context/DataContext/CartContext";
+import { useOrder } from "../../Context/DataContext/OrderContext";
 import { toast } from "react-toastify";
 export const CartTotalPriceTable = () => {
   const { cart, clearCart } = useCart();
@@ -21,8 +22,6 @@ export const CartTotalPriceTable = () => {
   const totalAmount = cart.item.reduce((acc, cv) => {
     return totalPrice - totalDiscount;
   }, 0);
-  const getAllProductsInCart = cart;
-  console.log("get", getAllProductsInCart);
   const loadScript = (src) => {
     return new Promise((resolve) => {
       const script = document.createElement("script");
@@ -87,7 +86,12 @@ export const CartTotalPriceTable = () => {
       <span class='justify-space-between'>
         You save Rs.{totalDiscount} in this order
       </span>
-      <button class='btn btn-accent width-100 mt-2' onClick={() => clearCart()}>
+      <button
+        class='btn btn-secondary width-100 mt-2'
+        onClick={() => {
+          loadRazorpayScript();
+        }}
+      >
         Place Order
       </button>
     </div>

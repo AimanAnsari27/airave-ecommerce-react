@@ -1,31 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,700&family=Mouse+Memoirs&family=Pacifico&display=swap');
-:root{
-  --hero-background:rgb(232, 245, 250);
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,700&family=Inter:wght@400;700&family=Lobster&family=Mouse+Memoirs&family=Pacifico&family=Sacramento&display=swap");
+:root {
+  /* --hero-background: rgb(232, 245, 250); */
+  --hero-background: #e3cbd0;
 }
+.app-container {
+  margin-top: 4rem;
+}
+.hero-section {
+  margin-top: 1rem;
 
-.hero-section{
   width: 30rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding: 1rem;
   gap: 1rem;
-  font-family: 'Alegreya', serif;
-  background-color:var(--hero-background) ;
+  /* font-family: "Alegreya", serif; */
+  font-family: "Inter", sans-serif;
+  /* font-family: "Lobster", cursive; */
+  /* font-family: "Mouse Memoirs", sans-serif; */
+  /* font-family: "Pacifico", cursive;
+  font-family: "Sacramento", cursive; */
+  background-color: var(--hero-background);
 }
-.hero{
+.hero {
   display: flex;
   height: 30rem;
-
 }
-.hero-image{
+.hero-image {
+  margin-top: 1rem;
+
   overflow: hidden;
   width: 80vw;
-  object-fit:contain ;
+  object-fit: contain;
   background-repeat: no-repeat;
 }
-.category-card{
- 
+.category-card {
   height: max-content;
- 
 }

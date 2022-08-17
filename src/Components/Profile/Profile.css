@@ -1,0 +1,17 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(245, 245, 245);
+  width: 15rem;
+  box-shadow: 2px 1px 17px -1px rgb(202, 202, 202);
+
+  padding: 1.2rem 1rem;
+}
+.text-gray {
+  color: var(--text-white);
+}
+.text-small {
+  font-size: 0.9rem;
+  padding-top: 5px;
+  color: var(--text-gray);
+}

@@ -1,26 +1,21 @@
-.wishlist-card{
-    display: flex;
-    flex-wrap: wrap;
-    /* flex-direction: row; */
-    gap: 3rem;
-    margin: 5rem;
-    align-items: center;
-    justify-content: center;
-    /* background-color: red; */
+.wishlist-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin: 4rem;
+  align-items: center;
+  justify-content: center;
 }
-.wishlist{
-    background-color: white;
-    color: red;
-    padding: 10px;
-    right:0;
-    border-radius:50% ;
+.wishlist {
+  background-color: white;
+  color: red;
+  padding: 10px;
+  right: 0;
+  border-radius: 50%;
 }
-.wishlist:hover{
-    background-color: red;
-    /* padding: 1rem; */
-    height: 2.2rem;
-    color: white;
-    transition: 0.2sec;
-    /* right:0;
-    border-radius:50% ; */
+.wishlist:hover {
+  background-color: red;
+  height: 2.2rem;
+  color: white;
+  transition: 0.2sec;
 }

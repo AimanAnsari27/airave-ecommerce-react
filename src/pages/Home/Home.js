@@ -11,15 +11,15 @@ export default function Home() {
       ) : (
         <>
           <div className='hero'>
+            <div className='hero-image'>
+              <img src='/Images/hero-image/hero-img.png' alt='hero-image' />
+            </div>
             <div className='hero-section'>
               <h2>Enjoy your dream vacation</h2>
               <p className='gray-text h5'>Get upto 50% OFF on top brands</p>
               <Link to='/product'>
-                <button className='btn btn-primary'>Shop Now</button>
+                <button className='btn btn-secondary'>Shop Now</button>
               </Link>
-            </div>
-            <div className='hero-image'>
-              <img src='/Images/hero-image/hero-img.avif' alt='hero-image' />
             </div>
           </div>
           <div className='flex-align-center m-2'>

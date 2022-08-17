@@ -23,6 +23,10 @@ import {
   getWishlistItemsHandler,
   removeItemFromWishlistHandler,
 } from "./backend/controllers/WishlistController";
+import {
+  getOrderHandler,
+  addOrderHandler,
+} from "./backend/controllers/OrderController";
 import { categories } from "./backend/db/categories";
 import { products } from "./backend/db/products";
 import { users } from "./backend/db/users";
@@ -39,6 +43,7 @@ export function makeServer({ environment = "development" } = {}) {
       user: Model,
       cart: Model,
       wishlist: Model,
+      // order: Model,
     },
 
     // Runs on the start of the server
@@ -87,6 +92,10 @@ export function makeServer({ environment = "development" } = {}) {
         "/user/wishlist/:productId",
         removeItemFromWishlistHandler.bind(this)
       );
+
+      //order routes
+      this.get("/user/order", getOrderHandler.bind(this));
+      this.post("/user/order", addOrderHandler.bind(this));
     },
   });
 }

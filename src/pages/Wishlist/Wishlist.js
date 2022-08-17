@@ -21,10 +21,10 @@ export default function Wishlist() {
   };
 
   return (
-    <div>
+    <div className='mt-2'>
       {wishlist.length > 0 ? (
         <>
-          <h4 className='flex-align-center mt-2 mb-2'>My Wishlist</h4>
+          <h4 className='flex-align-center mt-5 mb-1'>My Wishlist</h4>
           <div className='wishlist-card'>
             {isAuthenticated &&
               wishlist.map((item) => (
@@ -48,7 +48,7 @@ export default function Wishlist() {
                         (itemsCart) => itemsCart._id === item._id
                       ) ? (
                         <button
-                          className='btn btn-accent width-100 mt-1'
+                          className='btn btn-secondary width-100 mt-1'
                           onClick={() => {
                             toast.warning("Item is already in cart", {
                               autoClose: 1000,
@@ -59,7 +59,7 @@ export default function Wishlist() {
                         </button>
                       ) : (
                         <button
-                          className='btn btn-accent width-100 mt-1'
+                          className='btn btn-secondary width-100 mt-1'
                           onClick={() => {
                             addToCart(item);
                           }}

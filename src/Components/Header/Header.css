@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,700&family=Lobster&family=Mouse+Memoirs&family=Pacifico&family=Sacramento&display=swap");
+:root {
+  --text-gray-dark: rgb(28, 28, 28);
+  /* --bg-sidebar: #161618; */
+  --bg-sidebar: rgb(11, 11, 11);
+  --bg-sidebar-hover: rgb(255, 255, 255);
+  /* --text-accent-color: rgb(236, 46, 33); */
+  --text-accent-color: rgb(245, 9, 48);
+}
+nav {
+  display: flex;
+  background-color: var(--bg-sidebar-hover);
+  height: 4rem;
+  align-items: center;
+  padding: 0 2rem;
+  box-shadow: 0px 1px 7px 3px rgb(228, 228, 228);
+  opacity: 1;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-right: 5rem;
+  justify-content: space-between;
+}
+nav ul li {
+  padding: 0 1.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--bg-sidebar);
+  font-weight: bold;
+}
+nav ul li .bi {
+  font-weight: bold;
+}
+.searchbox {
+  border-radius: 15px;
+}
+.search-input {
+  width: 20rem;
+  padding: 0rem 0.5rem;
+  background-color: var(--bg-sidebar-hover);
+  color: var(--text-gray-dark);
+}
+input::placeholder {
+  color: var(--text-gray-dark);
+}
+
+.bold-text {
+  font-size: 1.1rem;
+}
+.btn-small {
+  width: 5rem;
+  padding: 0.4rem 1rem 0.4rem 1rem;
+  border: none;
+  border-radius: 10px;
+  color: var(--text-white);
+}
+.nav-brand {
+  font-weight: bold;
+  font-size: 1.3rem;
+  font-family: "Lobster", cursive;
+}
+.text-gray {
+  color: rgb(82, 82, 82);
+}
+.menu {
+  display: none;
+}
+
+.profile {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.profile-content {
+  position: absolute;
+  visibility: hidden;
+  margin-top: 2rem;
+  padding: 10px;
+}
+.profile:hover .profile-content {
+  visibility: visible;
+}
+@media screen and (max-width: 500px) {
+  .menu {
+    display: block;
+  }
+  nav {
+    padding: 0 0.9rem;
+    width: 100vw;
+  }
+  .search-input {
+    width: 10rem;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+  }
+  .sidebar-mobile {
+    width: 100vw;
+    position: absolute;
+    bottom: 0%;
+    display: flex;
+    justify-content: center;
+  }
+  .sidebar {
+    background-color: transparent;
+  }
+  .sidebar ul {
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    position: fixed;
+    background-color: var(--bg-sidebar);
+    bottom: 0;
+  }
+  .sidebar li span {
+    display: none;
+  }
+  .profile-content {
+    margin-right: 18rem;
+  }
+  .search-input {
+    width: 15rem;
+  }
+}
