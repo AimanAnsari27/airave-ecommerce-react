@@ -1,4 +1,7 @@
-export const FilterProduct = (product, { sort, categories, price, rating }) => {
+export const FilterProduct = (
+  product,
+  { sort, categories, price, rating, search }
+) => {
   let sortedProduct;
   // sort by price
   if ({ sort }) {
@@ -15,7 +18,14 @@ export const FilterProduct = (product, { sort, categories, price, rating }) => {
       return categories.includes(product.categoryName.toLowerCase());
     });
   }
-
+  if (search) {
+    sortedProduct = sortedProduct.filter(
+      (item) =>
+        item.name.toLowerCase().includes(search.toLowerCase()) ||
+        item.categoryName.toLowerCase().includes(search.toLowerCase())
+    );
+    return sortedProduct;
+  }
   //sort by rating
   if (rating) {
     sortedProduct = sortedProduct.filter((product) => {
@@ -24,14 +34,5 @@ export const FilterProduct = (product, { sort, categories, price, rating }) => {
     return sortedProduct;
   }
 
-  // sort by price range will work later
-  //   if (price) {
-  //     sortedProduct = sortedProduct.filter((product) => {
-  //       return product.price <= price;
-  //     });
-  //     return sortedProduct;
-  //   }
-  // sort by categories
-  console.log(sortedProduct);
   return sortedProduct;
 };

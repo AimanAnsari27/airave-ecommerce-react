@@ -11,7 +11,6 @@ export default function Wishlist() {
   const { wishlist, removeWishlist } = useWishlist();
   const { addCartItem, cart } = useCart();
   const {
-    isLogin,
     state: { isAuthenticated },
   } = useAuth();
   const addToCart = (item) => {

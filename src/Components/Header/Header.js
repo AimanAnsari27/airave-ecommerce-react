@@ -5,22 +5,24 @@ import { useWishlist } from "../../Context/DataContext/WishlistContext";
 import { toast, ToastContainer } from "react-toastify";
 import { Profile } from "../Profile/Profile";
 import "./Header.css";
+import { useData } from "../../Context/DataContext/DataContext";
 
 export const Header = () => {
   const {
     state: { isAuthenticated, user },
-    dispatch,
   } = useAuth();
+  const { state, dispatch, category } = useData();
   const { cart } = useCart();
   const { wishlist } = useWishlist();
-  const navigate = useNavigate();
-  const logoutHandler = () => {
-    dispatch({
-      type: "logout",
-    });
-    toast.success("Logout");
-    navigate("/");
-  };
+  // console.log(state);
+  // const navigate = useNavigate();
+  // const logoutHandler = () => {
+  //   dispatch({
+  //     type: "logout",
+  //   });
+  //   toast.success("Logout");
+  //   navigate("/");
+  // };
   return (
     <>
       <nav>
@@ -36,6 +38,13 @@ export const Header = () => {
               type='text'
               className='search-input'
               placeholder='Search here...'
+              value={state.search}
+              onChange={(e) => {
+                dispatch({
+                  type: "FILTER_BY_SEARCH",
+                  payload: e.target.value,
+                });
+              }}
             />
             <i className='bi bi-search search-icon'></i>
           </div>

@@ -65,29 +65,29 @@ export const CartTotalPriceTable = () => {
     razorpayObj.open();
   };
   return (
-    <div class='price-table bg-light-gray-2'>
-      <span class='h5 b-800'>Price Details</span>
+    <div className='price-table bg-light-gray-2'>
+      <span className='h5 b-800'>Price Details</span>
       <hr />
-      <div class='flex justify-space-between'>
+      <div className='flex justify-space-between'>
         <span>Price</span>
-        <span class='cart-value'>{totalPrice}</span>
+        <span className='cart-value'>{totalPrice}</span>
       </div>
-      <div class='flex justify-space-between'>
+      <div className='flex justify-space-between'>
         <span>Discount</span>
         <span>Rs.{totalDiscount}</span>
       </div>
 
       <hr />
-      <div class='flex justify-space-between'>
-        <span class='h5 b-800'>Total Amount</span>
+      <div className='flex justify-space-between'>
+        <span className='h5 b-800'>Total Amount</span>
         <span>Rs.{totalAmount}</span>
       </div>
       <hr />
-      <span class='justify-space-between'>
+      <span className='justify-space-between'>
         You save Rs.{totalDiscount} in this order
       </span>
       <button
-        class='btn btn-secondary width-100 mt-2'
+        className='btn btn-secondary width-100 mt-2'
         onClick={() => {
           loadRazorpayScript();
         }}

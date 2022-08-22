@@ -2,17 +2,16 @@ import { useData } from "../../Context/DataContext/DataContext";
 
 export const Filter = () => {
   const {
-    state: { categories, sort, price, rating },
+    state: { categories, sort, rating, search },
     dispatch,
     category,
   } = useData();
-  console.log(rating);
   return (
     <div>
-      <div class='flex pd-1 gap-4'>
+      <div className='flex pd-1 gap-4'>
         <span>Filter</span>
         <span
-          class='filter-text'
+          className='filter-text'
           onClick={() => {
             dispatch({
               type: "CLEAR_ALL",
@@ -25,8 +24,8 @@ export const Filter = () => {
       </div>
       <hr />
 
-      <div class='mt-1'>
-        <ul class='list-item'>
+      <div className='mt-1'>
+        <ul className='list-item'>
           <li className='text-primary'>Sort By</li>
           <li>
             <input
@@ -60,8 +59,8 @@ export const Filter = () => {
           </li>
         </ul>
       </div>
-      <div class='mb-1 mt-1'>
-        <ul class='list-item'>
+      <div className='mb-1 mt-1'>
+        <ul className='list-item'>
           <li className='text-primary'>Categories</li>
           {category.map(({ categoryName }) => (
             <li>
@@ -85,8 +84,8 @@ export const Filter = () => {
           ))}
         </ul>
       </div>
-      <div class='mb-1 mt-1'>
-        <ul class='list-item'>
+      <div className='mb-1 mt-1'>
+        <ul className='list-item'>
           <li className='text-primary'>Rating</li>
           <li>
             <label className='gray-text'>

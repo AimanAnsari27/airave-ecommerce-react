@@ -29,55 +29,55 @@ export default function SignUp() {
     <div className='auth-container'>
       <div class='form'>
         <span className='bold-text'>Sign up</span>
-        <div class='input-with-icons '>
-          <i class='bi bi-person-fill input-icon'></i>
+        <div className='input-with-icons '>
+          <i className='bi bi-person-fill input-icon'></i>
           <input
             type='text'
             placeholder='Enter your First Name'
-            class='icon-input'
+            className='icon-input'
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
         </div>
-        <div class='input-with-icons '>
-          <i class='bi bi-person-fill input-icon'></i>
+        <div className='input-with-icons '>
+          <i className='bi bi-person-fill input-icon'></i>
           <input
             type='text'
             placeholder='Enter your last Name'
-            class='icon-input'
+            className='icon-input'
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
           />
         </div>
-        <div class='input-with-icons '>
-          <i class='bi bi-envelope-fill input-icon'></i>
+        <div className='input-with-icons '>
+          <i className='bi bi-envelope-fill input-icon'></i>
           <input
             type='email'
             placeholder='Enter your Email'
-            class='icon-input'
+            className='icon-input'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div class='input-with-icons '>
-          <i class='bi bi-lock-fill input-icon'></i>
+        <div className='input-with-icons '>
+          <i className='bi bi-lock-fill input-icon'></i>
           <input
             type='password'
             placeholder='Enter your Password'
-            class='icon-input'
+            className='icon-input'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div className='text-danger mb-1'>{error}</div>
-        <div class='btn-container'>
+        <div className='btn-container'>
           <button
-            class='btn btn-gradient-pink  width-100'
+            className='btn btn-gradient-pink  width-100'
             onClick={() => handleSubmit()}
           >
             Signup
           </button>
-          <div class='link-primary' onClick={() => navigate("/login")}>
+          <div className='link-primary' onClick={() => navigate("/login")}>
             Already have an account ?
           </div>
         </div>

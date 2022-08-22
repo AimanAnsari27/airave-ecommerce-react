@@ -25,17 +25,17 @@ export default function Footer() {
           </li>
           <a href='https://github.com/aiman-ansari'>
             <li>
-              <i class='fa fa-github text-light'></i>
+              <i className='fa fa-github text-light'></i>
             </li>
           </a>
           <a href='https://www.linkedin.com/in/aiman-ansari-0054a01a7/'>
             <li>
-              <i class='fa fa-linkedin text-light'></i>
+              <i className='fa fa-linkedin text-light'></i>
             </li>
           </a>
           <a href='https://twitter.com/_aimanansari'>
             <li>
-              <i class='fa fa-twitter text-light'></i>
+              <i className='fa fa-twitter text-light'></i>
             </li>
           </a>
         </ul>

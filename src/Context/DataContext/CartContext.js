@@ -13,7 +13,6 @@ const CartProvider = ({ children }) => {
 
   const [cart, setCart] = useState(itemsInCart);
   const { isLogin } = useAuth();
-  console.log("from contxt", cart);
   const encodedToken = localStorage.getItem("token");
 
   useEffect(() => {

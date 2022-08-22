@@ -15,7 +15,6 @@ const OrderProvider = ({ children }) => {
         authorization: localStorage.getItem("token"),
       },
     });
-    console.log(res.data);
   };
   const addOrderHandler = async (order) => {
     try {

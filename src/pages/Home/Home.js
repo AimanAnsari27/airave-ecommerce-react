@@ -28,7 +28,7 @@ export default function Home() {
           <div className='flex-align-center gap-2'>
             {category.map((item) => (
               <Link to='/product'>
-                <Category item={item} />
+                <Category item={item} key={item._id} />
               </Link>
             ))}
           </div>

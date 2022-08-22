@@ -6,7 +6,6 @@ import "../../Components/Product/Product.css";
 export default function Product() {
   const { product, state } = useData();
   let allSortedProducts = FilterProduct(product, state);
-  console.log(allSortedProducts);
   return (
     <div className='product-container'>
       <div className='filters'>
@@ -19,7 +18,11 @@ export default function Product() {
         </h5>
 
         <div className='product-listing'>
-          <SingleProducts product={allSortedProducts} />
+          {allSortedProducts.length > 0 ? (
+            <SingleProducts product={allSortedProducts} />
+          ) : (
+            <h5>Not found</h5>
+          )}
         </div>
       </div>
     </div>

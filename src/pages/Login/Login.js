@@ -28,10 +28,11 @@ export default function Login() {
   };
   const handleTest = () => {
     handleLoginData(test.email, test.password);
+    navigate(-1);
   };
   return (
     <div className='auth-container'>
-      <div class='form'>
+      <div className='form'>
         <span className='bold-text'>Login</span>
         <div className='input-with-icons '>
           <i className='bi bi-envelope-fill input-icon'></i>
