@@ -18,49 +18,46 @@ const filterSlice = createSlice({
         sort: action.payload,
       };
     },
+    filterByCategory: (state, action) => {
+      return {
+        ...state,
+        categories: action.payload.isChecked
+          ? [...state.categories, action.payload.value]
+          : state.categories.filter(
+              (category) => category !== action.payload.value
+            ),
+      };
+    },
+    filterByPriceRange: (state, action) => {
+      return {
+        ...state,
+        price: action.payload,
+      };
+    },
+    filterByRating: (state, action) => {
+      return {
+        ...state,
+        rating: action.payload,
+      };
+    },
+    filterBySearch: (state, action) => {
+      return {
+        ...state,
+        search: action.payload,
+      };
+    },
+    clearAll: (state, action) => {
+      return initialState;
+    },
   },
 });
-// export const filterReducer = (state, action) => {
-//   const initialState = {
-//     sort: "",
-//     categories: [],
-//     price: 1000,
-//     search: "",
-//   };
 
-//   switch (action.type) {
-//     case "SORT_BY_PRICE":
-//       return { ...state, sort: action.payload };
-
-//     case "FILTER_BY_CATEGORY":
-//       return {
-//         ...state,
-//         categories: action.payload.isChecked
-//           ? [...state.categories, action.payload.value]
-//           : state.categories.filter(
-//               (category) => category !== action.payload.value
-//             ),
-//       };
-//     case "FILTER_BY_PRICE_RANGE":
-//       return {
-//         ...state,
-//         price: action.payload,
-//       };
-//     case "FILTER_BY_RATING":
-//       return {
-//         ...state,
-//         rating: action.payload,
-//       };
-//     case "FILTER_BY_SEARCH":
-//       return {
-//         ...state,
-//         search: action.payload,
-//       };
-
-//     case "CLEAR_ALL":
-//       return initialState;
-
-//     default:
-//       return state;
-//   }
-// };
+export const {
+  sortbyPrice,
+  filterByCategory,
+  filterByPriceRange,
+  filterByRating,
+  filterBySearch,
+  clearAll,
+} = filterSlice.actions;
+export default filterSlice.reducer;

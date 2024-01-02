@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Wishlist.css";
 
-toast.configure();
+// toast.configure();
 export default function Wishlist() {
   const { wishlist, removeWishlist } = useWishlist();
   const { addCartItem, cart } = useCart();
@@ -20,17 +20,17 @@ export default function Wishlist() {
   };
 
   return (
-    <div className='mt-2'>
+    <div className="mt-2">
       {wishlist.length > 0 ? (
         <>
-          <h4 className='flex-align-center mt-5 mb-1'>My Wishlist</h4>
-          <div className='wishlist-card'>
+          <h4 className="flex-align-center mt-5 mb-1">My Wishlist</h4>
+          <div className="wishlist-card">
             {isAuthenticated &&
               wishlist.map((item) => (
                 <>
-                  <div className='card box-shadow'>
+                  <div className="card box-shadow">
                     <i
-                      className='bi bi-heart-fill wishlist'
+                      className="bi bi-heart-fill wishlist"
                       onClick={() => {
                         removeWishlist(item);
                         toast.error("Item is removed from wishlist", {
@@ -38,16 +38,16 @@ export default function Wishlist() {
                         });
                       }}
                     ></i>
-                    <img src={item.image} className='img-sm' alt={item.name} />
-                    <div className='card-body'>
-                      <div className='card-title'>{item.name}</div>
-                      <div className='card-description'>{item.description}</div>
-                      <div className='price'>Rs. {item.price}</div>
+                    <img src={item.image} className="img-sm" alt={item.name} />
+                    <div className="card-body">
+                      <div className="card-title">{item.name}</div>
+                      <div className="card-description">{item.description}</div>
+                      <div className="price">Rs. {item.price}</div>
                       {cart.item.some(
                         (itemsCart) => itemsCart._id === item._id
                       ) ? (
                         <button
-                          className='btn btn-secondary width-100 mt-1'
+                          className="btn btn-secondary width-100 mt-1"
                           onClick={() => {
                             toast.warning("Item is already in cart", {
                               autoClose: 1000,
@@ -58,7 +58,7 @@ export default function Wishlist() {
                         </button>
                       ) : (
                         <button
-                          className='btn btn-secondary width-100 mt-1'
+                          className="btn btn-secondary width-100 mt-1"
                           onClick={() => {
                             addToCart(item);
                           }}
